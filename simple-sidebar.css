@@ -101,16 +101,22 @@
 }
 
 @media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
 
+    #menu-toggle {
+        display: none;
+    }
+    
+    #wrapper {
+        /*padding-left: 250px;*/
+    }
+    
     #wrapper.toggled {
         padding-left: 0;
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        display: none;
+        /*width: 250px;*/
     }
 
     #wrapper.toggled #sidebar-wrapper {
