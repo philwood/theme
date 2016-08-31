@@ -20,9 +20,6 @@
 		<!-- Sidebar Styles -->
 		<link href="<?php bloginfo('template_directory');?>/simple-sidebar.css" rel="stylesheet">
 
-		<!-- Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -83,7 +80,7 @@
 			<div class="container">
 
 				<div class="blog-header">
-					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
 					<h1 class="blog-title">The Bootstrap Blog</h1>
 					<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
 				</div>
