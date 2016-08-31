@@ -17,9 +17,6 @@
 		<!-- Custom styles for this template -->
 		<link href="<?php bloginfo('template_directory');?>/style.css" rel="stylesheet">
 
-		<!-- Sidebar Styles -->
-		<link href="<?php bloginfo('template_directory');?>/simple-sidebar.css" rel="stylesheet">
-
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -31,58 +28,30 @@
 	<body>
 
 		<div id="wrapper">
-			<!-- Sidebar -->
-	        <div id="sidebar-wrapper">
-	            <ul class="sidebar-nav">
-	                <li class="sidebar-brand">
-	                    <a href="#">
-	                        Start Bootstrap
-	                    </a>
-	                </li>
-	                <li>
-	                    <a href="#">Dashboard</a>
-	                </li>
-	                <li>
-	                    <a href="#">Shortcuts</a>
-	                </li>
-	                <li>
-	                    <a href="#">Overview</a>
-	                </li>
-	                <li>
-	                    <a href="#">Events</a>
-	                </li>
-	                <li>
-	                    <a href="#">About</a>
-	                </li>
-	                <li>
-	                    <a href="#">Services</a>
-	                </li>
-	                <li>
-	                    <a href="#">Contact</a>
-	                </li>
+			<!-- Side-Nav-wrapper -->
+	        <div id="side-nav-wrapper">
+	            <ul class="side-nav">
+	                <a href="<?php bloginfo('wpurl');?>" class="side-nav-brand">Logo</a>
+	                <?php wp_list_pages( '&title_li='); ?>
 	            </ul>
 	        </div>
-	        <!-- /#sidebar-wrapper -->
+	        <!-- /#Side-Nav-Wrapper -->
 
 	        <!-- Page Content -->
 	        <div id="page-content-wrapper">
 
-		        <div class="blog-masthead">
+		        <div class="masthead">
 					<div class="container">
-						<nav class="blog-nav">
-							<a class="blog-nav-item active" href="#">Home</a>
-							<a class="blog-nav-item" href="#">New features</a>
-							<a class="blog-nav-item" href="#">Press</a>
-							<a class="blog-nav-item" href="#">New hires</a>
-							<a class="blog-nav-item" href="#">About</a>
+						<nav class="desktop-nav">
+							<a class="desktop-nav-brand" href="<?php bloginfo('wpurl');?>">Logo</a>
+							<?php wp_list_pages( '&title_li='); ?>
 						</nav>
 					</div>
 				</div>
 
-				<div class="container">
-
-					<div class="blog-header">
+				<div class="masthead-mobile">
+					<div class="container">
 						<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-						<h1 class="blog-title"><a href="<?php bloginfo('wpurl');?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-						<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
+						<a class="mobile-nav-brand" href="<?php bloginfo('wpurl');?>">Logo</a>
 					</div>
+				</div>

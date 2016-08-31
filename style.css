@@ -13,6 +13,7 @@ Tags: bootstrap
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  overflow-x: hidden;
 }
 
 h1, .h1,
@@ -38,36 +39,69 @@ h6, .h6 {
   }
 }
 
-
 /*
  * Masthead for nav
  */
 
-.blog-masthead {
+.masthead {
   background-color: #428bca;
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+  display: none;
 }
 
-/* Nav links */
-.blog-nav-item {
+.masthead-mobile {
+  display: block;
+  text-align: center;
+  height: 50px;
+}
+
+.desktop-nav-brand {
   position: relative;
   display: inline-block;
   padding: 10px;
   font-weight: 500;
-  color: #cdddeb;
+  color: #fff;
 }
-.blog-nav-item:hover,
-.blog-nav-item:focus {
+.desktop-nav-brand:hover {
   color: #fff;
   text-decoration: none;
 }
 
-/* Active state gets a caret at the bottom */
-.blog-nav .active {
+#menu-toggle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 27px;
+}
+
+
+/*
+ * Nav links 
+ */
+
+.desktop-nav li {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500; 
+}
+.desktop-nav li a {
+    color: #eee;
+}
+.desktop-nav li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 
+ * Active state gets a caret at the bottom
+ */
+
+.desktop-nav .current_page_item a {
   color: #fff;
 }
-.blog-nav .active:after {
+.desktop-nav .current_page_item a:after {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -81,6 +115,139 @@ h6, .h6 {
   border-left: 5px solid transparent;
 }
 
+/*
+ * Toggle Styles
+ */
+
+#wrapper {
+    padding-left: 0;
+}
+
+#side-nav-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+#wrapper.toggled #side-nav-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/*
+ * Sidebar Styles
+ */
+
+.side-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.side-nav-brand {
+    text-indent: 20px;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+.side-nav-brand:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.side-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.side-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.side-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.side-nav li a:active,
+.side-nav li a:focus {
+    text-decoration: none;
+}
+
+.side-nav > .side-nav-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.side-nav > .side-nav-brand a {
+    color: #999999;
+}
+
+.side-nav > .side-nav-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+
+    .masthead {
+        display: block;
+    }
+
+    .masthead-mobile {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #side-nav-wrapper {
+        display: none;
+    }
+
+    #wrapper.toggled #side-nav-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
 
 /*
  * Blog name and description
@@ -101,17 +268,13 @@ h6, .h6 {
   color: #999;
 }
 
-
 /*
- * Main column and sidebar layout
+ * Sidebar modules for boxing content
  */
 
-.blog-main {
-  font-size: 18px;
-  line-height: 1.5;
+.blog-sidebar {
+  padding-top: 60px;
 }
-
-/* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
@@ -128,7 +291,10 @@ h6, .h6 {
 }
 
 
-/* Pagination */
+/*
+ * Pagination
+ */
+
 .pager {
   margin-bottom: 60px;
   text-align: left;
@@ -138,14 +304,31 @@ h6, .h6 {
   padding: 10px 20px;
   text-align: center;
   border-radius: 30px;
+  vertical-align: middle;
 }
 
+/*
+ * Blog excerpts
+ */
+
+.blog-excerpt {
+  margin-bottom: 60px;
+}
+.blog-excerpt-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-excerpt-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
 
 /*
  * Blog posts
  */
 
 .blog-post {
+  padding-top: 60px;
   margin-bottom: 60px;
 }
 .blog-post-title {
@@ -157,6 +340,18 @@ h6, .h6 {
   color: #999;
 }
 
+/*
+ * Page
+ */
+
+.page {
+  padding-top: 60px;
+  margin-bottom: 60px;
+}
+.page-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
 
 /*
  * Footer
@@ -171,4 +366,79 @@ h6, .h6 {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+/*
+ * CSS Page Transitions
+ */
+
+.scene_element {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+}
+
+/** An element that fades in */
+.scene_element--fadein {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/** An element that fades in and slides up */
+.scene_element--fadeinup {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+/** An element that fades in and slides from the right */
+.scene_element--fadeinright {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+/** Reverse the animation */
+.is-exiting .scene_element {
+  -webkit-animation-direction: alternate-reverse;
+  animation-direction: alternate-reverse; }
+
+/*
+ * Keyframes
+ */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }

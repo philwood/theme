@@ -1,7 +1,7 @@
 				</div><!-- /.container -->
 
-				<footer class="blog-footer">
-					<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+				<footer class="blog-footer scene_element scene_element--fadein pt-reverse">
+					<p>Sufficiently modded to be <a href="https://en.wikipedia.org/wiki/Pwn">pwned</a> by <a href="https://twitter.com/phil_wood_">@phil_wood_</a>.</p>
 					<p>
 						<a href="#">Back to top</a>
 					</p>
@@ -17,6 +17,8 @@
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="<?php bloginfo('template_directory');?>/js/jquery.smoothState.js"></script>
+		<script src="<?php bloginfo('template_directory');?>/js/runSmoothState.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Menu Toggle Script -->
 		<script>
@@ -36,6 +38,8 @@
 		        }
 		    });
 		});
+
+		$(window).on('resize',function(){location.reload();});
 
 	    </script>
 	    <?php wp_footer(); ?> 
