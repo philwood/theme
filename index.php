@@ -218,7 +218,7 @@
 	        $("#wrapper").toggleClass("toggled");
 	    });
 	    if($("#wrapper").hasClass("toggled")) {
-	    	$("#page-content-wrapper").click(function(e) {
+	    	$("div:not(#sidebar-wrapper)").click(function(e) {
 	    		e.preventDefault();
 	    		$("#wrapper").toggleClass("toggled");
 	    	});
