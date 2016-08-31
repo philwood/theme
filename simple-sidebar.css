@@ -8,6 +8,10 @@
     overflow-x: hidden;
  }
 
+ .blog-masthead {
+    display: none;
+ }
+
 /* Toggle Styles */
 
 #wrapper {
@@ -44,7 +48,6 @@
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -58,6 +61,7 @@
     position: absolute;
     top: 0;
     width: 250px;
+    height: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -102,6 +106,10 @@
 
 @media(min-width:768px) {
 
+     .blog-masthead {
+        display: block;
+     }
+
     #menu-toggle {
         display: none;
     }
@@ -124,7 +132,6 @@
     }
 
     #page-content-wrapper {
-        padding: 20px;
         position: relative;
     }
 
