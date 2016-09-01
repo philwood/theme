@@ -30,6 +30,9 @@ $(function(){
         $container.html($newContent);
 
       }
+    },
+    onAfter: function($container, $newContent) {
+      $.readyFn.execute();
     }
   },
   smoothState = $('#page-content-wrapper').smoothState(options).data('smoothState');
