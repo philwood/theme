@@ -10,6 +10,9 @@ Tags: bootstrap
  * Globals
  */
 
+html.toggled,body.toggled {
+  overflow-y: hidden;
+}
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
