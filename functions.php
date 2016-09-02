@@ -31,7 +31,7 @@ function lock_and_load() {
 
 add_action('wp_print_styles', 'add_google_fonts');
 function add_google_fonts() {
-    wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+    wp_register_style('OpenSans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
     wp_enqueue_style( 'OpenSans');
 }
 
