@@ -5,40 +5,52 @@
 				        <div class="container">
 				            <div class="row">
 				                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-				                    <h3> Lorem Ipsum </h3>
-				                    <ul>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                    </ul>
+				                	<?php 
+									$location = 'footer-menu-1';
+									if (has_nav_menu($location)) :
+									    $menu_obj = get_menu_by_location($location); 
+									    wp_nav_menu( array( 
+									        'theme_location'  => $location,
+									        'items_wrap'=> '<h3>'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>'
+									    )); 
+									endif;
+									?>
 				                </div>
 				                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-				                    <h3> Lorem Ipsum </h3>
-				                    <ul>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                    </ul>
+									<?php 
+									$location = 'footer-menu-2';
+									if (has_nav_menu($location)) :
+									    $menu_obj = get_menu_by_location($location); 
+									    wp_nav_menu( array( 
+									        'theme_location'  => $location,
+									        'items_wrap'=> '<h3>'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>'
+									    )); 
+									endif;
+									?>
 				                </div>
 				                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-				                    <h3> Lorem Ipsum </h3>
-				                    <ul>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                    </ul>
+									<?php 
+									$location = 'footer-menu-3';
+									if (has_nav_menu($location)) :
+									    $menu_obj = get_menu_by_location($location); 
+									    wp_nav_menu( array( 
+									        'theme_location'  => $location,
+									        'items_wrap'=> '<h3>'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>'
+									    )); 
+									endif;
+									?>
 				                </div>
 				                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-				                    <h3> Lorem Ipsum </h3>
-				                    <ul>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                        <li> <a href="#"> Lorem Ipsum </a> </li>
-				                    </ul>
+									<?php 
+									$location = 'footer-menu-4';
+									if (has_nav_menu($location)) :
+									    $menu_obj = get_menu_by_location($location); 
+									    wp_nav_menu( array( 
+									        'theme_location'  => $location,
+									        'items_wrap'=> '<h3>'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>'
+									    )); 
+									endif;
+									?>
 				                </div>
 				                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
 				                    <h3> Lorem Ipsum </h3>
@@ -51,11 +63,21 @@
 				                        </li>
 				                    </ul>
 				                    <ul class="social">
-				                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-				                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-				                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-				                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-				                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+				                    	<?php if(get_option('facebook') != ''){ ?>
+											<li> <a href="<?php echo get_option('facebook'); ?>"> <i class=" fa fa-facebook">   </i> </a> </li>
+				                    	<?php } ?>
+				                        <?php if(get_option('twitter') != ''){ ?>
+				                        	<li> <a href="<?php echo get_option('twitter'); ?>"> <i class="fa fa-twitter">   </i> </a> </li>
+				                        <?php } ?>
+				                        <?php if(get_option('google') != ''){ ?>
+				                        	<li> <a href="<?php echo get_option('google'); ?>"> <i class="fa fa-google-plus">   </i> </a> </li>
+				                        <?php } ?>
+				                        <?php if(get_option('pinterest') != ''){ ?>
+				                        	<li> <a href="<?php echo get_option('pinterest'); ?>"> <i class="fa fa-pinterest">   </i> </a> </li>
+				                        <?php } ?>
+				                        <?php if(get_option('youtube') != ''){ ?>
+				                        	<li> <a href="<?php echo get_option('youtube'); ?>"> <i class="fa fa-youtube">   </i> </a> </li>
+				                        <?php } ?>
 				                    </ul>
 				                </div>
 				            </div>
@@ -67,7 +89,7 @@
 				    
 				    <div class="footer-bottom">
 				        <div class="container">
-				            <p class="pull-left"> Copyright &copy; Generic Theme 2016. All right reserved. </p>
+				            <p class="pull-left"> Copyright &copy; <?php echo get_bloginfo( 'name' ) . ' ' . date('Y'); ?>. All right reserved. </p>
 				            <div class="pull-right">
 				                <ul class="nav nav-pills payments">
 				                	<li><i class="fa fa-cc-visa"></i></li>
@@ -85,15 +107,9 @@
 
 	    </div><!-- /#wrapper -->	
 
-		<!-- JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="<?php bloginfo('template_directory');?>/js/readyExec.js"></script>
-		<script src="<?php bloginfo('template_directory');?>/js/jquery.smoothState.js"></script>
-		<script src="<?php bloginfo('template_directory');?>/js/runSmoothState.js"></script>
-		<script src="<?php bloginfo('template_directory');?>/js/menuToggle.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	    <?php wp_footer(); ?> 
 
-		<!-- Script -->
+	    <!-- Script -->
 		<script>
 
 		//$(function() {
@@ -101,7 +117,6 @@
 		//});	
 
 	    </script>
-		
-	    <?php wp_footer(); ?> 
+
 	</body>
 </html>

@@ -1,20 +1,19 @@
 $(function() {
 
-    $("#menu-toggle").on('click', function(e) {
+    $("#menu-open, #menu-close").on('click', function(e) {
 	    e.preventDefault();
-	    e.stopPropagation();
+	    e.stopImmediatePropagation();
 
 	    $("#wrapper").toggleClass("toggled");
 
 	    $(document).one('click', function closeMenu (e){
 
-	        if($("#sidebar-wrapper").has(e.target).length === 0){
+	        if($("#side-nav-wrapper").has(e.target).length === 0){
 	            $("#wrapper").removeClass("toggled");
-	        } else {
+	        }
+	        else {
 	            $(document).one('click', closeMenu);
 	        }
 	    });
 	});
 });
-
-$(window).on('resize',function(){location.reload();});

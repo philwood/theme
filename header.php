@@ -9,17 +9,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>Blog Template for Bootstrap</title>
-
-		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- Font Awesome CSS -->
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-		<!-- Custom styles for this template -->
-		<link href="<?php bloginfo('template_directory');?>/css/style.css" rel="stylesheet">
-
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,10 +24,16 @@
 		<div id="wrapper">
 			<!-- Side-Nav-wrapper -->
 	        <div id="side-nav-wrapper">
-	            <ul class="side-nav">
-	                <a href="<?php bloginfo('wpurl');?>" class="side-nav-brand">Logo</a>
-	                <?php wp_list_pages( '&title_li='); ?>
-	            </ul>
+	        	<nav class="side-nav">
+	        		<div class="side-nav-header">
+		        		<a href="#menu-close" id="menu-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+		        		<a href="<?php bloginfo('wpurl');?>" class="side-nav-brand">Logo</a>
+	        		</div>
+		            <?php wp_list_pages( '&title_li='); ?>
+		        </nav>
+		        <footer>
+		        	<p>Copyright &copy; Generic Theme 2016</p>
+		        </footer>
 	        </div>
 	        <!-- /#Side-Nav-Wrapper -->
 
@@ -56,7 +51,7 @@
 
 				<div class="masthead-mobile">
 					<div class="container">
-						<a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+						<a href="#menu-open" id="menu-open"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
 						<a class="mobile-nav-brand" href="<?php bloginfo('wpurl');?>">Logo</a>
 					</div>
 				</div>

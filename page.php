@@ -2,8 +2,8 @@
 
 <div class="container">
 
-	<div class="row scene_element scene_element--fadeinright pt-reverse">
-		<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-12 scene_element scene_element--fadeinright pt-reverse">
 
 			<?php 
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
